@@ -2,104 +2,130 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Srivatsala Silver House — luxury design system. All colors HSL. */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand */
+    --bg: 213 100% 12%;            /* #001F3F navy */
+    --bg-dark: 213 100% 8%;        /* #00152A */
+    --card: 213 100% 14%;          /* #002347 */
+    --rose-gold: 351 33% 57%;      /* #B76E79 */
+    --silver: 60 4% 89%;           /* #E5E4E2 */
+    --gold: 44 56% 54%;            /* #C9A84C */
+    --gold-light: 44 73% 66%;      /* #E8C96A */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Tokens (shadcn) */
+    --background: 213 100% 12%;
+    --foreground: 60 4% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card-bg: 213 100% 14%;
+    --card-foreground: 60 4% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: 213 100% 14%;
+    --popover-foreground: 60 4% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: 44 56% 54%;
+    --primary-foreground: 213 100% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 351 33% 57%;
+    --secondary-foreground: 60 4% 98%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 213 60% 20%;
+    --muted-foreground: 60 4% 75%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 351 33% 57%;
+    --accent-foreground: 60 4% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 60 4% 98%;
 
-    --radius: 0.5rem;
+    --border: 213 50% 22%;
+    --input: 213 50% 22%;
+    --ring: 44 73% 66%;
 
-    --sidebar-background: 0 0% 98%;
+    --radius: 0.75rem;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Gradients & effects */
+    --gradient-gold: linear-gradient(135deg, hsl(44 73% 66%) 0%, hsl(44 56% 54%) 50%, hsl(351 33% 57%) 100%);
+    --gradient-rose: linear-gradient(135deg, hsl(351 33% 57%) 0%, hsl(351 40% 45%) 100%);
+    --gradient-bg: radial-gradient(ellipse at top, hsl(213 80% 18%) 0%, hsl(213 100% 8%) 70%);
+    --gradient-card: linear-gradient(160deg, hsl(213 80% 18%) 0%, hsl(213 100% 10%) 100%);
+    --shadow-gold: 0 10px 40px -10px hsl(44 73% 66% / 0.35);
+    --shadow-rose: 0 10px 40px -10px hsl(351 50% 60% / 0.4);
+    --shadow-elegant: 0 20px 60px -20px hsl(213 100% 4% / 0.7);
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  * { @apply border-border; }
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
+  html, body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
   body {
-    @apply bg-background text-foreground;
+    background: var(--gradient-bg);
+    background-attachment: fixed;
   }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gold-border {
+    position: relative;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+  }
+  .gold-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-gold);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-medium tracking-wide text-[hsl(var(--bg-dark))] transition-all duration-300;
+    background: var(--gradient-gold);
+    box-shadow: var(--shadow-gold);
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 18px 50px -10px hsl(44 73% 66% / 0.55); }
+
+  .btn-ghost-gold {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-medium tracking-wide transition-all duration-300;
+    color: hsl(var(--gold-light));
+    border: 1px solid hsl(var(--gold) / 0.5);
+  }
+  .btn-ghost-gold:hover {
+    background: hsl(var(--gold) / 0.1);
+    border-color: hsl(var(--gold-light));
+  }
+
+  .luxury-card {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-elegant);
+  }
+}
+
+@layer utilities {
+  .glow-gold { box-shadow: 0 0 60px hsl(44 73% 66% / 0.3); }
+  .glow-rose { box-shadow: 0 0 50px hsl(351 50% 60% / 0.35); }
+  .text-shadow-gold { text-shadow: 0 0 30px hsl(44 73% 66% / 0.4); }
 }

@@ -1,16 +1,41 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useLenis } from "@/hooks/useLenis";
+import { Marquee } from "@/components/site/Marquee";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { AndhraTraditional } from "@/components/site/AndhraTraditional";
+import { Categories } from "@/components/site/Categories";
+import { Products } from "@/components/site/Products";
+import { CollectionsStrip } from "@/components/site/CollectionsStrip";
+import { Bridal } from "@/components/site/Bridal";
+import { WhyUs } from "@/components/site/WhyUs";
+import { Offers } from "@/components/site/Offers";
+import { Testimonials } from "@/components/site/Testimonials";
+import { Location } from "@/components/site/Location";
+import { Footer } from "@/components/site/Footer";
+import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useLenis();
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen overflow-x-hidden">
+      <Marquee />
+      <Nav />
+      <main>
+        <Hero />
+        <AndhraTraditional />
+        <Categories />
+        <Products />
+        <CollectionsStrip />
+        <Bridal />
+        <WhyUs />
+        <Offers />
+        <Testimonials />
+        <Location />
+      </main>
+      <Footer />
+      <WhatsAppFab />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
