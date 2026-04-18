@@ -1,7 +1,7 @@
 import { useLenis } from "@/hooks/useLenis";
 import { Marquee } from "@/components/site/Marquee";
 import { Nav } from "@/components/site/Nav";
-import { Hero } from "@/components/site/Hero";
+import { HeroSlider } from "@/components/site/HeroSlider";
 import { AndhraTraditional } from "@/components/site/AndhraTraditional";
 import { Categories } from "@/components/site/Categories";
 import { Products } from "@/components/site/Products";
@@ -21,7 +21,7 @@ const Index = () => {
       <Marquee />
       <Nav />
       <main>
-        <Hero />
+        <HeroSlider />
         <AndhraTraditional />
         <Categories />
         <Products />
